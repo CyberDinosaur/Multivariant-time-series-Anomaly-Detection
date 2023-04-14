@@ -1,0 +1,10 @@
+method_name: normal
+
+epochs: 1
+
+optimizer:
+    _target_: torch.optim.Adam
+    lr: 0.001
+    
+criterion:
+    _target_: torch.nn.CrossEntropyLoss

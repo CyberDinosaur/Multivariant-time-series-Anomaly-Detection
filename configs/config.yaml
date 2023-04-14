@@ -1,0 +1,12 @@
+defaults:
+    - _self_
+    - dataset: SWaT
+    - algorithm: LSTM
+    - train: normal
+
+# meta-configurations
+wandb:
+    project: 'LSTM_on_SWaT'
+
+device: 'cuda'
+seed: 42

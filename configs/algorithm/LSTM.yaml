@@ -1,0 +1,13 @@
+alg_name: 'LSTM'
+model_type:
+    type: 'Generate'
+    input_shape: 'N * L * K'
+# Generate, Pattern
+
+model:
+    _target_: models.LSTM.RecurrentAE
+
+latent_dim: 32
+
+
+# specify some parameters of network here
