@@ -4,4 +4,4 @@ clean:
 	rm -rf outputs
 
 sync:
-	git push origin main
+	git push -u origin main
