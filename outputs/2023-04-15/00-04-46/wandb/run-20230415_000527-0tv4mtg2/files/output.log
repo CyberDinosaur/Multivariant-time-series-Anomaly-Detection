@@ -1,0 +1,24 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/mnt/e/Code_Zero/main.py", line 19, in main
+    model = pipeline(cfg, device, seed)
+  File "/mnt/e/Code_Zero/model_pipeline.py", line 42, in pipeline
+    model, train_loader, val_loader, test_loader, criterion, optimizer = make(config, device)
+  File "/mnt/e/Code_Zero/pipeline/make.py", line 11, in make
+    train_loader, val_loader, test_loader, n_sensor = CPS_data_loader(dataset_cfg)
+  File "/mnt/e/Code_Zero/datasets.py", line 11, in CPS_data_loader
+    return load_SWaT(dataset_cfg['data_path'], dataset_cfg['batch_size'], dataset_cfg['num_features'])
+  File "/mnt/e/Code_Zero/datasets.py", line 16, in load_SWaT
+    data =  pd.read_csv(root)
+  File "/home/hyt/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/hyt/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/hyt/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/hyt/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/hyt/.local/lib/python3.10/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'E:/Code_Zero/raw_data/Swat_physical/SWaT_Dataset_Attack_v0.csv'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

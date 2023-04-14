@@ -6,7 +6,7 @@ def train(model, train_loader, criterion, optimizer, train_cfg, model_type, devi
     # Tell wandb to watch what the model gets up to: gradients, weights, and more...
     wandb.watch(model, criterion, log="all", log_freq=10)
 
-    # Run training and track with wandb
+
     total_batches = len(train_loader) * train_cfg['epochs']
     example_ct = 0  # number of examples seen
     batch_ct = 0
@@ -25,16 +25,16 @@ def train(model, train_loader, criterion, optimizer, train_cfg, model_type, devi
 def train_batch(features, labels, model, optimizer, criterion, model_type, device):
     features, labels = features.to(device), labels.to(device)
     
-    # Forward pass ➡ 
+    # Forward pass ➡ based on model's input_shape(whether extend the feature's dim)
     if model_type['input_shape'] == 'N * L * K * D':
         outputs = model(features)
     elif model_type['input_shape'] == 'N * L * K':
         outputs = model(torch.squeeze(features))
     
-    # Calculate the loss based on the model's type
+    # Calculate the loss based on the model's type(whether to use labels as the ground-truth or it's original features)
     if model_type['type'] == 'Generate':
         loss = criterion(outputs, torch.squeeze(features))  # the reconstruction loss
-    elif model_type['type'] == '':
+    elif model_type['type'] == 'Predict':
         loss  = criterion(outputs, labels) # the prediction loss
         
     # Backward pass ⬅

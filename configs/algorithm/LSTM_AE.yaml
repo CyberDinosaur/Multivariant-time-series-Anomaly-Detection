@@ -1,4 +1,4 @@
-alg_name: 'LSTM'
+alg_name: 'LSTM_AE'
 model_type:
     type: 'Generate'
     input_shape: 'N * L * K'

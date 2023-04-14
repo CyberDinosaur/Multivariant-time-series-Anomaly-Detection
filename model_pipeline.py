@@ -43,7 +43,7 @@ def pipeline(hyper_params, device, seed):
 
     # and use them to train the model
     train_cfg = config.train
-    model_type = config.algorithm['model_type']
+    model_type = config.algorithm['model_type'] # input_size and type
     train(model, train_loader, criterion, optimizer, train_cfg, model_type, device)
 
     # and test its final performance

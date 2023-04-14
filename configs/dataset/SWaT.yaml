@@ -4,8 +4,7 @@ data_path: 'E:/Code_Zero/raw_data/Swat_physical/SWaT_Dataset_Attack_v0.csv'
 
 
 num_features: 51
-valid_features: 44
-# label: false
+valid_features: 44  # After normalized
 
 
 batch_size: 16

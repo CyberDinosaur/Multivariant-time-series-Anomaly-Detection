@@ -7,4 +7,4 @@ optimizer:
     lr: 0.001
     
 criterion:
-    _target_: torch.nn.CrossEntropyLoss
+    _target_: torch.nn.MSELoss

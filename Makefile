@@ -2,6 +2,7 @@
 
 clean:
 	rm -rf outputs
-
 sync:
-	git push -u origin main
+	git push -u MAD main
+run:
+    ./run.sh
